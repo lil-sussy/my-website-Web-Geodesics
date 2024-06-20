@@ -1,0 +1,159 @@
+// Variables
+$font-segoe-ui: "Outfit", Helvetica, sans-serif;
+$font-stretch-pro: 'Stretch Pro', sans-serif;
+
+// SCSS Code
+.Navbar {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  z-index: 20;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 385px 4px;
+  position: fixed;
+  padding: 1rem 0;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  backdrop-filter: blur(40px);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  .logoItems {
+    align-self: flex-start;
+
+    img {
+    }
+    
+    .logo {
+      position: relative;
+      top: -1.2rem;
+      left: 2rem;
+      width: 2rem;
+      height: 2rem;
+      transform: scale(2) translateY(1rem);
+    }
+  }
+
+  .item {
+    position: relative;
+    width: 10rem;
+    font-family: $font-segoe-ui;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: text-decoration 0.2s;
+
+    &:hover {
+      color: #deec48;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .selected {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+// Mobile styles (max-width)
+@media (max-width: 767px) {
+  .navbar {
+    display: none; // Hide desktop navbar in mobile view
+  }
+
+  .Navbar {
+    width: 100vw;
+    height: 72px;
+    padding: 0 11px;
+    display: flex;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(200px);
+
+    .NavbarContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .BurgerMenu {
+      padding-left: 3%;
+      flex-direction: column;
+      gap: 6px;
+      display: flex;
+
+      .Rectangle38, .Rectangle39, .Rectangle40 {
+        width: 34px;
+        height: 3px;
+        background: white;
+        border-radius: 28px;
+      }
+    }
+
+    .LogoMiddleForPhone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .artboard {
+        position: relative;
+        width: 48.28px;
+        height: 40.40px;
+        transform: rotate(0.74deg);
+      }
+
+      .WebGeodesics {
+        font-size: 10px;
+        line-height: 10px;
+        font-family: $font-stretch-pro;
+        font-weight: 400;
+        color: white;
+      }
+    }
+
+    .Actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// Media query for 1080px screens
+@media (max-width: 1080px) {
+  .navbar {
+    .logoItems {
+      .logo { }
+    }
+    .item {
+      &:hover { }
+    }
+    .selected { }
+  }
+  .Navbar {
+    .NavbarContainer { }
+    .BurgerMenu {
+      .Rectangle38 { }
+      .Rectangle39 { }
+      .Rectangle40 { }
+    }
+    .LogoMiddleForPhone {
+      .artboard { }
+      .WebGeodesics { }
+    }
+    .Actions { }
+  }
+}

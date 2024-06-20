@@ -1,0 +1,20 @@
+
+.potato-wrapper {
+  position: absolute;
+  .potato-shape {
+    // filter: blur(80px);
+    will-change: contents;
+    // animation: movePotato 5s infinite; /* Adjust time for speed */
+    transform: translateZ(0);
+    fill: currentColor; /* Uses the SVG's fill color */
+  }
+}
+
+
+@keyframes movePotato {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(20px, -40px); }
+  50% { transform: translate(40px, 0px); }
+  75% { transform: translate(20px, 40px); }
+  100% { transform: translate(0px, 0px); }
+}

@@ -1,0 +1,588 @@
+$white-color: white;
+$font-poppins: "Poppins", sans-serif;
+$font-segoe: "Outfit", sans-serif;
+$font-roboto: "Outfit", sans-serif;
+$font-acme: "Hedvig Letters Sans", sans-serif;
+$color-white: white;
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.text-style {
+	color: $color-white;
+	word-wrap: break-word;
+}
+
+.box-style {
+	border-radius: 8px;
+	backdrop-filter: blur(300px);
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.aboutMeSection {
+	width: 100%;
+	padding: 0 10%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 56px;
+
+	.pictureOfMeSide {
+		@extend .flex-column;
+		align-items: center;
+
+		.womanPhotograph1 {
+			width: 324.53px;
+		}
+
+		.name {
+			@extend .flex-column;
+			gap: 29px;
+
+			.yanRegojo {
+				@extend .text-style;
+				font-size: 40px;
+				font-weight: 800;
+				line-height: 48px;
+				font-family: $font-poppins;
+			}
+
+      .linkedin {
+					width: 53px;
+					height: 53px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+          }
+				}
+
+			.downloadButton {
+				width: 248px;
+				height: 57px;
+				padding: 12px 24px;
+				border: 1px rgba(255, 255, 255, 0.5) solid;
+				backdrop-filter: blur(200px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 8px;
+
+				.button {
+					@extend .text-style;
+					font-size: 20px;
+					font-weight: 400;
+					line-height: 30px;
+					font-family: $font-segoe;
+				}
+			}
+		}
+	}
+
+	.bentoLayout {
+		width: 60%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 23px;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		.bentoTitle,
+		.bentoDescription,
+		.bentoMissionText,
+		.bentoModernText,
+		.bentConnectText,
+		.bentoLast {
+			@extend .box-style;
+			@extend .flex-column;
+			padding: 2rem;
+      font-family: $font-segoe;
+      font-weight: 300;
+      font-size: 16px;
+
+      
+			div {
+        line-height: 1.2rem;
+
+        div:first-child {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 10px;
+        }
+        div:nth-child(3) {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 28px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+        ul {
+          margin-top: 1rem;
+          li {
+            margin-bottom: 10px;
+          }
+          margin-left: 1.5rem;
+        }
+
+				&.myWork {
+					@extend .text-style;
+					font-size: 1.3rem;
+					font-weight: 400;
+					line-height: 1.5rem;
+					font-family: $font-segoe;
+				}
+
+				span {
+					font-size: 0.9rem;
+					font-weight: 400;
+					line-height: 1.1rem;
+					font-family: $font-segoe;
+				}
+			}
+		}
+
+		.bentoTitle {
+			width: 833px;
+
+			.aboutMe {
+				@extend .text-style;
+				font-size: 36px;
+				font-weight: 700;
+				line-height: 47.2px;
+				font-family: $font-poppins;
+			}
+		}
+
+		.bentoContainer {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: 2rem;
+			column-gap: 3%;
+
+			.bentoDescription {
+				width: 80%;
+				box-sizing: border-box;
+
+				.description {
+					align-self: stretch;
+
+					span:first-child {
+						@extend .text-style;
+						font-size: 1.2rem;
+						font-weight: 900;
+						line-height: 28px;
+						font-family: $font-segoe;
+					}
+				}
+			}
+
+			.bentoSideIcons {
+				width: 100px;
+				box-sizing: border-box;
+				padding: 15px 16px;
+				@extend .box-style;
+				@extend .flex-column;
+				align-items: center;
+				gap: 12px;
+
+				.figma,
+				.midjourney,
+				.chatgpt,
+				.photoshop {
+					width: 60px;
+					height: 60px;
+					border-radius: 12px;
+          &:hover{
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+          }
+				}
+
+				.figma {
+					width: 70px;
+					height: 70px;
+				}
+
+				.chatgpt {
+					height: 62px;
+					border-radius: 15px;
+				}
+			}
+
+			.bentoAsset {
+				width: 37%;
+				height: fit-content;
+			}
+
+			.assetSideContainer {
+				width: 60%;
+				@extend .flex-column;
+				gap: 20px;
+
+				.bentoMissionText,
+				.bentoModernText {
+					width: 100%;
+
+					.missionText,
+					.modernText {
+						align-self: stretch;
+						flex: 1 1 0;
+
+						span:first-child {
+							@extend .text-style;
+							font-size: 20px;
+							font-weight: 900;
+							line-height: 28px;
+							font-family: $font-segoe;
+						}
+					}
+				}
+			}
+		}
+
+		.bentoContainerCenter {
+			padding: 63px 0;
+			@extend .flex-column;
+			gap: 10px;
+
+			.bentConnectText {
+				width: 315px;
+				height: 115px;
+
+				.connectText {
+					align-self: stretch;
+					flex: 1 1 0;
+
+					span:first-child {
+						@extend .text-style;
+						font-size: 20px;
+						font-weight: 900;
+						line-height: 28px;
+						font-family: $font-acme;
+					}
+				}
+			}
+
+			.actions {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 34px;
+
+				.linkedin {
+					width: 53px;
+					height: 53px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+          }
+				}
+
+				.button {
+					width: 284px;
+					height: 61px;
+					padding: 18px 32px;
+					background: rgba(255, 255, 255, 0.13);
+					backdrop-filter: blur(200px);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 8px;
+
+					.button {
+						@extend .text-style;
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 24px;
+						font-family: $font-roboto;
+					}
+				}
+			}
+		}
+
+		.bentoLast {
+			width: 303px;
+			height: 287px;
+
+			.lastText {
+				align-self: stretch;
+				flex: 1 1 0;
+
+				span:first-child {
+					@extend .text-style;
+					font-size: 20px;
+					font-weight: 900;
+					line-height: 28px;
+					font-family: $font-segoe;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1354px) {
+	.aboutMeSection {
+		padding: 0% 5%;
+
+		.pictureOfMeSide {
+			.womanPhotograph1 {
+			}
+			.name {
+				.yanRegojo {
+				}
+				.downloadButton {
+					.button {
+					}
+				}
+			}
+		}
+
+		.bentoLayout {
+			.bentoTitle {
+				.aboutMe {
+				}
+				.myWork {
+				}
+			}
+
+			.bentoDescription {
+				.description {
+				}
+			}
+
+			.bentoAsset {
+			}
+
+			.bentoContainerCenter {
+				.bentConnectText {
+					.connectText {
+					}
+				}
+
+				.actions {
+					.linkedin {
+					}
+					.button {
+						.button {
+						}
+					}
+				}
+			}
+
+			.assetSideContainer {
+				.bentoMissionText {
+					.missionText {
+					}
+				}
+
+				.bentoModernText {
+					.modernText {
+					}
+				}
+			}
+
+			.bentoLast {
+				.lastText {
+				}
+			}
+
+			.bentoSideIcons {
+				.figma {
+				}
+				.midjourney {
+				}
+				.chatgpt {
+				}
+				.photoshop {
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1038px) {
+	.aboutMeSection {
+		padding: 0% 5%;
+
+		.pictureOfMeSide {
+			.womanPhotograph1 {
+			}
+			.name {
+				.yanRegojo {
+				}
+				.downloadButton {
+					.button {
+					}
+				}
+			}
+		}
+
+		.bentoLayout {
+			.bentoTitle {
+				.aboutMe {
+				}
+				.myWork {
+				}
+			}
+
+			.bentoContainer {
+				.bentoDescription {
+					width: 100%;
+					.description {
+					}
+				}
+
+				.bentoSideIcons {
+					height: fit-content;
+					.figma {
+					}
+					.midjourney {
+					}
+					.chatgpt {
+					}
+					.photoshop {
+					}
+				}
+
+				.bentoAsset {
+				}
+
+				.assetSideContainer {
+					width: 100%;
+					.bentoMissionText {
+						.missionText {
+						}
+					}
+					.bentoModernText {
+						.modernText {
+						}
+					}
+				}
+			}
+
+			.bentoContainerCenter {
+				width: 100%;
+
+				.bentConnectText {
+					width: 100%;
+					.connectText {
+					}
+				}
+
+				.actions {
+					.linkedin {
+					}
+					.button {
+						.button {
+						}
+					}
+				}
+			}
+
+			.bentoLast {
+			}
+			.lastText {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 796px) {
+	.aboutMeSection {
+		padding: 0% 5%;
+		flex-direction: column;
+
+		.pictureOfMeSide {
+			width: 100%;
+
+			.womanPhotograph1 {
+			}
+			.name {
+				.yanRegojo {
+				}
+				.downloadButton {
+					.button {
+					}
+				}
+			}
+		}
+
+		.bentoLayout {
+			width: 100%;
+
+			.bentoTitle {
+				.aboutMe {
+				}
+				.myWork {
+				}
+			}
+
+			.bentoContainer {
+				.bentoDescription {
+					width: 100%;
+					.description {
+					}
+				}
+
+				.bentoSideIcons {
+					height: fit-content;
+					.figma {
+					}
+					.midjourney {
+					}
+					.chatgpt {
+					}
+					.photoshop {
+					}
+				}
+
+				.bentoAsset {
+				}
+
+				.assetSideContainer {
+					width: 100%;
+					.bentoMissionText {
+						.missionText {
+						}
+					}
+					.bentoModernText {
+						.modernText {
+						}
+					}
+				}
+			}
+
+			.bentoContainerCenter {
+				width: 100%;
+
+				.bentConnectText {
+					width: 100%;
+					.connectText {
+					}
+				}
+
+				.actions {
+					.linkedin {
+					}
+					.button {
+						.button {
+						}
+					}
+				}
+			}
+
+			.bentoLast {
+				width: 100%;
+				.lastText {
+				}
+			}
+		}
+	}
+}

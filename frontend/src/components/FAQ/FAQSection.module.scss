@@ -1,0 +1,255 @@
+$white-color: white;
+$black-color: black;
+$poppins-font: "Poppins", sans-serif;
+$acme-font: "Hedvig Letters Sans", sans-serif;
+$segoe-font: "Outfit", sans-serif;
+
+@mixin flex-container($flex-direction: row, $justify-content: flex-start, $align-items: flex-start, $gap: 0) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	gap: $gap;
+}
+
+@mixin inline-flex-container($flex-direction: row, $justify-content: flex-start, $align-items: flex-start, $gap: 0) {
+	display: inline-flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	gap: $gap;
+}
+
+@mixin stretch {
+	align-self: stretch;
+}
+
+@mixin border($color: $white-color, $width: 1px, $style: solid) {
+	border: $width $style $color;
+}
+
+.faqSection {
+	width: 100%;
+	padding: 10%;
+	box-sizing: border-box;
+	@include inline-flex-container(column, flex-start, flex-start, 80px);
+
+	.container {
+		@include stretch;
+		@include inline-flex-container(row, flex-start, flex-start, 80px);
+
+		.sectionTitle {
+			width: 30%;
+			@include inline-flex-container(column, flex-start, flex-start, 32px);
+
+			.content {
+				@include stretch;
+				height: 136px;
+				@include flex-container(column, flex-start, flex-start, 24px);
+
+				.title {
+					@include stretch;
+					color: $white-color;
+					font-size: 48px;
+					font-family: $poppins-font;
+					font-weight: 700;
+					line-height: 57.6px;
+					word-wrap: break-word;
+				}
+
+				.subtitle {
+					@include stretch;
+					color: $white-color;
+					font-size: 18px;
+					font-family: $acme-font;
+					font-weight: 400;
+					line-height: 27px;
+					word-wrap: break-word;
+				}
+			}
+
+			.moreQuestionsButtonContainer {
+				width: 157px;
+				padding: 12px 24px;
+				@include border($black-color);
+				@include inline-flex-container(row, center, center, 8px);
+
+				.moreQuestionsButton {
+					color: $white-color;
+					font-size: 16px;
+					font-family: $segoe-font;
+					font-weight: 400;
+					line-height: 24px;
+					word-wrap: break-word;
+				}
+			}
+		}
+
+		.accordion {
+			flex: 1 1 0;
+			@include inline-flex-container(column, flex-start, flex-start);
+
+			.accordionItem {
+				@include stretch;
+				@include flex-container(column, flex-start, flex-start);
+
+				.divider {
+					@include stretch;
+					height: 1px;
+					background: $white-color;
+					@include border($white-color);
+				}
+
+				.question {
+					@include stretch;
+					padding-top: 20px;
+					@include inline-flex-container(row, flex-start, center, 12px);
+
+					.questionText {
+						flex: 1 1 0;
+						color: $white-color;
+						font-size: 18px;
+						font-family: $segoe-font;
+						font-weight: 700;
+						line-height: 27px;
+						word-wrap: break-word;
+					}
+
+					.icon {
+						width: 32px;
+						height: 32px;
+						position: relative;
+
+						.iconVector {
+							width: 16.79px;
+							height: 9.5px;
+							left: 7.6px;
+							top: 11.6px;
+							position: absolute;
+							background: $white-color;
+							@include border($white-color);
+						}
+					}
+				}
+				.answer {
+					@include stretch;
+					padding: 12px 33px 28px;
+					@include inline-flex-container(row, flex-start, center, 12px);
+          margin-bottom: 2rem;
+
+					.answerText {
+						flex: 1 1 0;
+						color: $white-color;
+						font-size: 18px;
+						font-family: $segoe-font;
+						font-weight: 350;
+						line-height: 27px;
+						word-wrap: break-word;
+
+						.underline {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Media query for 1080px screens */
+@media (max-width: 1136px) {
+	.faqSection {
+		.container {
+			.sectionTitle {
+				.content {
+					.title {
+					}
+
+					.subtitle {
+						font-size: 16px;
+						line-height: 19px;
+					}
+				}
+
+				.moreQuestionsButtonContainer {
+					.moreQuestionsButton {
+					}
+				}
+			}
+
+			.accordion {
+				.accordionItem {
+					.divider {
+					}
+
+					.question {
+						.questionText {
+							font-size: 18px;
+							line-height: 22px;
+						}
+
+						.icon {
+							.iconVector {
+							}
+						}
+					}
+
+					.answer {
+						.answerText {
+							font-size: 14px;
+							line-height: 17px;
+							.underline {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 864px) {
+	.faqSection {
+		.container {
+      flex-direction: column;
+			.sectionTitle {
+        width: 100%;
+				.content {
+					.title {
+					}
+
+					.subtitle {
+					}
+				}
+
+				.moreQuestionsButtonContainer {
+					.moreQuestionsButton {
+					}
+				}
+			}
+
+			.accordion {
+				.accordionItem {
+					.divider {
+					}
+
+					.question {
+						.questionText {
+						}
+
+						.icon {
+							.iconVector {
+							}
+						}
+					}
+
+					.answer {
+						.answerText {
+							.underline {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

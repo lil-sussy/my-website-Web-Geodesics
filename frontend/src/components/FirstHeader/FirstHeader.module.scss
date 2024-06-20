@@ -1,0 +1,304 @@
+@font-face {
+	font-family: "Stretch Pro";
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.cdnfonts.com/s/48412/StretchPro.woff) format("woff");
+}
+
+
+@import url("https://fonts.cdnfonts.com/s/48412/StretchPro.woff");
+
+$font-poppins: "Poppins", sans-serif;
+$font-acme: "Hedvig Letters Sans", sans-serif;
+$font-segoe: "Space Mono", cursive;
+$font-stretch: "Stretch Pro", sans-serif;
+
+$color-white: white;
+$color-highlight: #fbff30;
+
+$header-padding: 10%;
+$header-padding-small: 3%;
+$header-padding-mobile: 1%;
+
+$line-height-hero: 44px;
+$line-height-text: 33.6px;
+$line-height-webgeo: 69px;
+
+$font-size-hero: 40px;
+$font-size-text: 24px;
+$font-size-webgeo: 64px;
+
+.text-base {
+	color: $color-white;
+	font-weight: 400;
+}
+
+.text-highlight {
+	color: $color-highlight;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.responsive-font-headline {
+	font-family: $font-poppins;
+	font-size: $font-size-hero;
+	line-height: $line-height-hero;
+}
+
+.responsive-font-description {
+	font-family: $font-acme;
+	font-size: $font-size-text;
+	line-height: $line-height-text;
+}
+
+.responsive-font-logo {
+	font-family: $font-stretch;
+	font-size: $font-size-webgeo;
+	line-height: $line-height-webgeo;
+}
+
+.logoImage {
+	width: 25rem;
+	height: 25rem;
+}
+
+.header {
+  margin-top: 10rem;
+	width: 100vw;
+	padding: 5% 10%;
+	@extend .flex-column;
+	gap: 1px;
+
+	.content {
+		align-self: stretch;
+		@extend .flex-container;
+
+		.space {
+			flex: 1;
+		}
+
+		.contentContainer {
+			width: 850px;
+			padding: 0 0 0 74px;
+			@extend .flex-column;
+			gap: 24px;
+
+			.headline {
+				@extend .text-base;
+				@extend .responsive-font-headline;
+				font-weight: 700;
+			}
+
+			.description {
+				@extend .text-base;
+				@extend .responsive-font-description;
+
+				.highlight {
+					@extend .text-highlight;
+					font-family: $font-segoe;
+				}
+			}
+
+			.actions {
+				padding-top: 16px;
+				@extend .flex-container;
+				@extend .flex-row;
+				gap: 16px;
+			}
+		}
+	}
+
+	.logos {
+		width: 100%;
+		@extend .flex-container;
+		justify-content: space-between;
+		align-items: center;
+
+		.wrapper {
+			@extend .flex-container;
+			align-items: center;
+			justify-content: center;
+			gap: -36px;
+		}
+
+		.logoText {
+			@extend .text-base;
+			@extend .responsive-font-logo;
+			word-wrap: break-word;
+		}
+
+		.arrow {
+			width: 50px;
+		}
+	}
+
+  @media (max-width: 1322px) {
+    margin-top: 6rem;
+    padding: 3% 8%;
+		.content {
+			.space,
+			.contentContainer {
+        width: 700px;
+				.headline {
+          font-size: 30px;
+          line-height: 35px;
+        }
+				.description {
+          font-size: 18px;
+          line-height: 24px;
+					.highlight {
+					}
+				}
+				.actions {
+				}
+			}
+		}
+
+		.logos {
+      margin-top: -3rem;
+      .wrapper {
+        img {
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+			.logoImage,
+			.logoText,
+			.arrow {
+        font-size: 48px;
+				line-height: 48px;
+			}
+		}
+	}
+
+	@media (max-width: 818px) {
+		.content {
+			.contentContainer {
+				.headline,
+				.description .highlight,
+				.actions {
+					// Empty media query rules for now
+				}
+			}
+		}
+
+		.logos {
+			transform: translateX(-3rem);
+		}
+	}
+
+	@media (max-width: 700px) {
+		padding: 0 $header-padding-small;
+
+		.contentContainer {
+			width: 100%;
+			padding: 0 2%;
+		}
+
+		.logos {
+			transform: translateX(0);
+			margin-top: 0;
+      .wrapper {
+        img {
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+
+			.logoText {
+				font-size: 26px;
+				line-height: 26px;
+			}
+
+			.logoImage {
+				width: 10rem;
+				height: 10rem;
+			}
+
+			.arrow {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: 450px) {
+		padding-top: 30%;
+		height: 100vh;
+		gap: 50px;
+		padding: 0 $header-padding-mobile;
+
+		.contentContainer {
+			width: 100%;
+		}
+
+		.content {
+      
+      .contentContainer {
+        padding: 0 1rem;
+        gap: 30px;
+  
+        .actions {
+          width: 100%;
+          gap: 6px;
+          align-items: center;
+          // Empty media query rules for now
+        }
+      }
+    }
+
+		.logos {
+			transform: translateX(0);
+			margin-top: 0;
+      .wrapper {
+        img {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+
+			.logoText {
+				font-size: 25px;
+				line-height: 32px;
+			}
+    }
+	}
+
+	@media (max-width: 1080px) {
+		.content {
+			.space,
+			.contentContainer {
+				.headline,
+				.description {
+					.highlight {
+						// Empty media query rules for now
+					}
+				}
+				.actions {
+					// Empty media query rules for now
+				}
+			}
+		}
+
+		.logos {
+			.logoImage,
+			.logoText,
+			.arrow {
+				// Empty media query rules for now
+			}
+		}
+	}
+}

@@ -1,0 +1,246 @@
+// Font variables
+$font-heading: "Poppins", sans-serif;
+$font-text: "Hedvig Letters Sans", sans-serif;
+
+.ThirdHeader {
+	width: 100%;
+	height: 843px;
+	padding: 112px 64px;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 80px;
+
+	.Container {
+		align-self: stretch;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		gap: 80px;
+
+		.ImageContainer {
+			height: 619px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+
+			.BentoAsset {
+				width: 304px;
+				height: 619px;
+			}
+		}
+
+		.ContainerInner {
+			width: 80%;
+			max-width: 50rem;
+			gap: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+
+			.Content {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 24px;
+
+				.Heading {
+					align-self: stretch;
+					color: white;
+					font-size: 48px;
+					font-family: $font-heading;
+					font-weight: 700;
+					line-height: 57.6px;
+					word-wrap: break-word;
+				}
+				.SecondHeading {
+					align-self: stretch;
+					color: white;
+					font-size: 28px;
+					font-family: $font-heading;
+					font-weight: 700;
+					line-height: 33.6px;
+					word-wrap: break-word;
+          margin-bottom: -1rem;
+				}
+
+				.Text {
+					align-self: stretch;
+					color: white;
+					font-size: 18px;
+					font-family: $font-text;
+					font-weight: 400;
+					line-height: 27px;
+					word-wrap: break-word;
+				}
+			}
+
+			.Actions {
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1080px) {
+	.ThirdHeader {
+		.Container {
+			.ImageContainer {
+				.BentoAsset {
+				}
+			}
+			.ContainerInner {
+				.Content {
+					.Heading {
+						font-size: 36px;
+						line-height: 43.2px;
+					}
+					.Text {
+						font-size: 16px;
+						line-height: 24px;
+					}
+				}
+				.Actions {
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.ThirdHeader {
+		.Container {
+			.ImageContainer {
+				.BentoAsset {
+					width: unset;
+					height: 355px;
+				}
+			}
+			.ContainerInner {
+				.Content {
+					.Heading {
+					}
+					.Text {
+					}
+				}
+				.Actions {
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 737px) {
+	.ThirdHeader {
+		width: 100%;
+		margin-top: 4rem;
+		height: unset;
+		padding: 28px 10%;
+		gap: 80px;
+    margin-bottom: 8rem;
+
+		.Container {
+			height: unset;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 22px;
+
+			.ImageContainer {
+				align-self: stretch;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+
+				.BentoAsset {
+					width: unset;
+					height: 455px;
+				}
+			}
+
+			.ContainerInner {
+				width: 100%;
+				.Content {
+					align-self: stretch;
+					height: unset;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					gap: 14px;
+
+					.Heading {
+						font-size: 24px;
+						line-height: 28.8px;
+					}
+          .SecondHeading {
+            margin-bottom: 0rem;
+          }
+
+					.Text {
+						font-size: 16px;
+						line-height: 18px;
+					}
+				}
+
+				.Actions {
+					.Button {
+						font-size: 12px;
+						line-height: 18px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.ThirdHeader {
+		.Container {
+			.ImageContainer {
+				.BentoAsset {
+				}
+			}
+			.ContainerInner {
+				.Content {
+					.Heading {
+					}
+					.Text {
+					}
+				}
+				.Actions {
+					width: 100%;
+					gap: 6px;
+					align-items: center;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1080px) {
+	.ThirdHeader {
+		.Container {
+			.ImageContainer {
+				.BentoAsset {
+				}
+			}
+			.ContainerInner {
+				.Content {
+					.Heading {
+					}
+					.Text {
+					}
+				}
+				.Actions {
+				}
+			}
+		}
+	}
+}

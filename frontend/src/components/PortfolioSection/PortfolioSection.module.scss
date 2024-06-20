@@ -1,0 +1,387 @@
+/* Variables */
+$white-color: white;
+$poppins-font: 'Poppins';
+$acme-font: 'Hedvig Letters Sans';
+$segoe-ui-font: 'Outfit';
+$roboto-font: 'Outfit';
+$primary-color: rgba(255, 255, 255, 0.57);
+$secondary-color: rgba(255, 255, 255, 0.50);
+
+/* Mixins */
+@mixin flex-column($justify: flex-start, $align: flex-start, $gap: 0, $display: flex) {
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  display: $display;
+}
+
+@mixin common-border {
+  border: 1px $primary-color solid;
+  backdrop-filter: blur(1000px);
+}
+
+@mixin placeholder-image($gradient: linear-gradient(0deg, #829AA8 0%, #829AA8 100%)) {
+  align-self: stretch;
+  height: 200px;
+  background: $gradient, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+  border: 1px rgba(255, 255, 255, 0.49) solid;
+}
+
+@mixin button-style($font-size: 14px, $font-family: $segoe-ui-font, $font-weight: 300, $line-height: 21px) {
+  color: $white-color;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  word-wrap: break-word;
+}
+
+/* Styles */
+.featuresSection {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10%;
+  @include flex-column(flex-start, flex-start, 30px, inline-flex);
+
+  .titleContainer {
+    width: 80%;
+    max-width: 60rem;
+    @include flex-column(flex-start, flex-start, 19px);
+
+    .mainTitle {
+      align-self: stretch;
+      color: $white-color;
+      font-size: 48px;
+      font-family: $poppins-font;
+      font-weight: 700;
+      line-height: 57.6px;
+      word-wrap: break-word;
+    }
+
+    .subTitle {
+      width: 768px;
+      color: $white-color;
+      font-size: 18px;
+      font-family: $acme-font;
+      font-weight: 400;
+      line-height: 27px;
+      word-wrap: break-word;
+    }
+  }
+
+  .featureContainer {
+    max-width: 1440px;
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 21px;
+    flex-wrap: wrap;
+    display: inline-flex;
+
+    .featureColumn {
+      min-width: 22rem;
+      max-width: 23rem;
+      flex: 1 1 0;
+      align-self: stretch;
+      padding: 30px 28px;
+      @include common-border;
+      @include flex-column(flex-start, flex-start, 24px, inline-flex);
+
+      .placeholderImage {
+        @include placeholder-image;
+      }
+
+      .content {
+        align-self: stretch;
+        height: 368px;
+        @include flex-column(flex-start, flex-start, 24px);
+        justify-content: space-between;
+
+        .sectionTitle {
+          align-self: stretch;
+          height: 212px;
+          @include flex-column(flex-start, center, 16px);
+
+          .featureTitle {
+            align-self: stretch;
+            color: $white-color;
+            font-size: 24px;
+            font-family: $poppins-font;
+            font-weight: 700;
+            line-height: 29.04px;
+            word-wrap: break-word;
+          }
+
+          .featureDescription {
+            align-self: stretch;
+            height: 174px;
+            color: $white-color;
+            font-size: 16px;
+            font-family: $segoe-ui-font;
+            font-weight: 400;
+            line-height: 24px;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+
+    .featureColumn:nth-child(5) .placeholderImage {
+      @include placeholder-image(linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%));
+    }
+
+    .featureColumn:nth-child(5) .content {
+
+      .sectionTitle {
+        height: 165px;
+
+        .featureDescription {
+          height: auto;
+        }
+      }
+    }
+
+    .featureColumn:nth-child(5) {
+      .cuteSittingImage {
+        width: 20rem;
+        left: 3rem;
+        top: -2rem;
+        position: absolute;
+      }
+
+      .content {
+  
+        .sectionTitle {
+          height: 188px;
+  
+          .featureDescription {
+            height: 243px;
+          }
+        }
+      }
+    }
+  }
+
+  .actions {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 31px;
+    display: inline-flex;
+
+    .primaryButtonContainer {
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.10);
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      display: flex;
+
+      .button {
+        @include button-style(16px, $roboto-font, 400, 24px);
+      }
+    }
+
+    .secondaryButtonContainer {
+      padding: 12px 24px;
+      border: 1px $secondary-color solid;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      display: flex;
+
+      .button {
+        @include button-style(16px, $roboto-font, 400, 24px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1568px) {
+  .featuresSection {
+    .titleContainer {
+      .mainTitle {}
+      .subTitle {}
+    }
+    .featureContainer {
+      .featureColumn:nth-child(3) {
+        .cuteSittingImage {
+          width: 15rem;
+          left: 4rem;
+          top: -12rem;
+        }
+      }
+      .featureColumn {
+        .placeholderImage {}
+        .content {
+          .sectionTitle {
+            .featureTitle {}
+            .featureDescription {}
+          }
+        }
+      }
+    }
+    .actions {
+      .primaryButtonContainer {
+        .button {}
+      }
+      .secondaryButtonContainer {
+        .button {}
+      }
+    }
+  }
+}
+@media (max-width: 1134px) {
+  .featuresSection {
+    .titleContainer {
+    .mainTitle {
+        font-size: 2rem;
+        font-family: $poppins-font;
+        font-weight: 700;
+        line-height: 2.2rem;
+      }
+      .subTitle {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+    }
+    .featureContainer {
+      .featureColumn:nth-child(1) { 
+        position: relative;
+        .cuteSittingImage {
+          display: block;
+          width: 15rem;
+          left: 4rem;
+          top: -12rem;
+          position: absolute;
+        }
+      }
+      .featureColumn:nth-child(3) {
+        .cuteSittingImage {
+          display: none;
+        }
+      }
+      .featureColumn {
+        .placeholderImage {}
+        .content {
+          .sectionTitle {
+            .featureTitle {}
+            .featureDescription {}
+          }
+        }
+      }
+    }
+    .actions {
+      .primaryButtonContainer {
+        .button {}
+      }
+      .secondaryButtonContainer {
+        .button {}
+      }
+    }
+  }
+}
+@media (max-width: 816px) {
+  .featuresSection {
+    .titleContainer {
+      .mainTitle {
+        font-size: 2rem;
+        font-family: $poppins-font;
+        font-weight: 700;
+        line-height: 2.2rem;
+      }
+      .subTitle {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+    }
+    .featureContainer {
+      .featureColumn:nth-child(1) { 
+        .cuteSittingImage {
+        }
+      }
+      .featureColumn:nth-child(3) {
+        .cuteSittingImage {
+        }
+      }
+      .featureColumn {
+        .placeholderImage {}
+        .content {
+          .sectionTitle {
+            .featureTitle {}
+            .featureDescription {}
+          }
+        }
+      }
+    }
+    .actions {
+      .primaryButtonContainer {
+        .button {}
+      }
+      .secondaryButtonContainer {
+        .button {}
+      }
+    }
+  }
+}
+@media (max-width: 486px) {
+  .featuresSection {
+    .titleContainer {
+      .mainTitle {
+        font-size: 1.5rem;
+        font-family: $poppins-font;
+        font-weight: 700;
+        line-height: 1.8rem;
+      }
+      .subTitle {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+      }
+    }
+    .featureContainer {
+      .featureColumn:nth-child(1) { 
+        .cuteSittingImage {
+        }
+      }
+      .featureColumn:nth-child(3) {
+        .cuteSittingImage {
+        }
+      }
+      .featureColumn {
+        min-width: 11rem;
+        .placeholderImage {
+          height: 168px;
+        }
+        .content {
+          .sectionTitle {
+            .featureTitle {
+              font-size: 1.5rem;
+              line-height: 2rem;
+              word-wrap: break-word;
+            }
+
+            .featureDescription {
+              height: 174px;
+              font-size: 0.9rem;
+              line-height: 1.2rem;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+    }
+    .actions {
+      .primaryButtonContainer {
+        .button {
+          @include button-style(0.9rem, $roboto-font, 400, 1.2rem);
+        }
+      }
+      .secondaryButtonContainer {
+        .button {
+          @include button-style(0.9rem, $roboto-font, 400, 1.2rem);
+        }
+      }
+    }
+  }
+}

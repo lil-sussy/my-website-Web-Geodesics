@@ -11,8 +11,13 @@
   },
   "dependencies": {
     "antd": "^5.18.3",
+    "cookies": "^0.9.1",
+    "flubber": "^0.4.2",
+    "js-cookie": "^3.0.5",
+    "markdown-to-jsx": "^7.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.77.6"
   },
   "devDependencies": {

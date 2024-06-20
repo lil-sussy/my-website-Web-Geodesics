@@ -1,0 +1,250 @@
+// Variables
+$white-color: white;
+$font-roboto: 'Outfit';
+$font-segoe: 'Outfit';
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-weight-600: 600;
+$font-weight-400: 400;
+$line-height-24: 24px;
+$line-height-21: 21px;
+$word-wrap: break-word;
+$position-absolute: absolute;
+
+// Mixins
+@mixin flex-container($flex-direction, $justify-content, $align-items, $gap, $display: flex) {
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  display: $display;
+}
+
+@mixin absolute-position($width, $height, $left, $top, $background: $white-color) {
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+  position: $position-absolute;
+  background: $background;
+}
+
+@mixin link-style($font-size, $font-weight, $line-height, $font-family, $color: $white-color) {
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  word-wrap: $word-wrap;
+}
+
+// Styles
+.footer {
+  width: 100%;
+  padding: 3%;
+  box-sizing: border-box;
+  @include flex-container(column, flex-start, center, 80px, inline-flex);
+
+  .content {
+    align-self: stretch;
+    @include flex-container(row, flex-start, center, 32px, inline-flex);
+    justify-content: space-between;
+
+    .logoSection {
+      @include flex-container(column, center, flex-start, 0px, inline-flex);
+      display: flex;
+
+      .logoContainer {
+        width: 74px;
+        position: relative;
+
+        .logoPart1 {
+          @include absolute-position(29.52px, 22.81px, 14.14px, 22.56px);
+        }
+        .logoPart2 {
+          @include absolute-position(23.08px, 23.64px, 35.97px, 22.19px);
+        }
+      }
+    }
+
+    .linksSection {
+      @include flex-container(row, flex-start, flex-start, 32px);
+
+      .link {
+        @include link-style($font-size-16, $font-weight-600, $line-height-24, $font-roboto);
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .socialLinksSection {
+      flex: 1 1 0;
+      max-width: 300px;
+      height: 24px;
+      @include flex-container(row, flex-end, center, 12px);
+
+      .socialIcon {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.3);
+          transition: transform 0.3s;
+        }
+
+        .facebookIcon {
+          @include absolute-position(20px, 20px, 2px, 2.24px);
+        }
+        .instagramIcon {
+          @include absolute-position(18px, 18px, 3px, 3.24px);
+        }
+        .twitterIcon {
+          @include absolute-position(18px, 16px, 3px, 4.24px);
+        }
+        .linkedinIcon {
+          @include absolute-position(18px, 18px, 3px, 3.24px);
+        }
+        .youtubeIcon {
+          @include absolute-position(20.01px, 14.01px, 1.99px, 5px);
+        }
+      }
+    }
+  }
+
+  .creditsSection {
+    align-self: stretch;
+    height: 54px;
+    @include flex-container(column, flex-start, center, 32px);
+
+    .divider {
+      align-self: stretch;
+      height: 1px;
+      background: black;
+      border: 1px $white-color solid;
+    }
+
+    .creditsRow {
+      @include flex-container(row, flex-start, flex-start, 24px, inline-flex);
+
+      .rightsReserved {
+        @include link-style($font-size-14, $font-weight-400, $line-height-21, $font-segoe);
+      }
+
+      .footerLinks {
+        @include flex-container(row, flex-start, flex-start, 24px);
+
+        .privacyPolicy,
+        .termsOfService,
+        .cookiesSettings {
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+          @include link-style($font-size-14, $font-weight-400, $line-height-21, $font-roboto);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 892px) {
+  .footer {
+    .content {
+      flex-direction: column;
+      .logoSection {
+        .logoContainer {
+          .logoPart1,
+          .logoPart2 {
+            // Empty rules
+          }
+        }
+      }
+      .linksSection {
+        .link {
+          // Empty rules
+        }
+      }
+      .socialLinksSection {
+        .socialIcon {
+          .facebookIcon,
+          .instagramIcon,
+          .twitterIcon,
+          .linkedinIcon,
+          .youtubeIcon {
+            // Empty rules
+          }
+        }
+      }
+    }
+    .creditsSection {
+      .divider {
+        // Empty rules
+      }
+      .creditsRow {
+        flex-direction: column-reverse;
+        .rightsReserved {
+          // Empty rules
+        }
+        .footerLinks {
+          .privacyPolicy,
+          .termsOfService,
+          .cookiesSettings {
+            // Empty rules
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .footer {
+    .content {
+      .logoSection {
+        .logoContainer {
+          .logoPart1,
+          .logoPart2 {
+            // Empty rules
+          }
+        }
+      }
+      .linksSection {
+        .link {
+          // Empty rules
+        }
+      }
+      .socialLinksSection {
+        .socialIcon {
+          .facebookIcon,
+          .instagramIcon,
+          .twitterIcon,
+          .linkedinIcon,
+          .youtubeIcon {
+            // Empty rules
+          }
+        }
+      }
+    }
+    .creditsSection {
+      .divider {
+        // Empty rules
+      }
+      .creditsRow {
+        .rightsReserved {
+          // Empty rules
+        }
+        .footerLinks {
+          .privacyPolicy,
+          .termsOfService,
+          .cookiesSettings {
+            // Empty rules
+          }
+        }
+      }
+    }
+  }
+}

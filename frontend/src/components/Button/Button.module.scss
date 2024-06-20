@@ -1,0 +1,56 @@
+.primary,
+.secondary {
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	display: flex;
+
+	button {
+		border: 1px solid transparent !important;
+		padding: 24px 48px;
+		border-radius: 0;
+		background: transparent;
+		color: white;
+		font-size: 16px;
+		font-family: "Outfit", sans-serif;
+    &:hover {
+      cursor: pointer !important;
+    }
+	}
+}
+
+.primary {
+	button {
+		background: rgba(255, 255, 255, 0.1) !important;
+		backdrop-filter: blur(300px) !important;
+		&:hover {
+			color: #fbff30 !important;
+			background: rgba(251, 255, 48, 0.3) !important;
+			backdrop-filter: blur(20px) !important;
+		}
+	}
+}
+.secondary {
+	button {
+		border: 1px solid rgba(255, 255, 255, 0.2) !important;
+		background: rgba(255, 255, 255, 0) !important;
+		backdrop-filter: blur(300px) !important;
+		&:hover {
+			color: #fbff30 !important;
+			border: 1px solid rgba(251, 255, 48, 0.6) !important;
+			background: rgba(251, 255, 48, 0.15) !important;
+			backdrop-filter: blur(20px) !important;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.primary,
+	.secondary {
+    button { 
+      padding: 8px 16px;
+      font-size: small !important;
+    }
+	}
+}

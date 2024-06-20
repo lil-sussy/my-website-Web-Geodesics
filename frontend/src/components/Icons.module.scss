@@ -1,0 +1,25 @@
+.Frame57 {
+  width: 380.41px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+  justify-self: flex-end;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .Vector {
+    width: 20rem;
+    height: 2rem;
+    transform: rotate(90deg) translateY(600%);
+  }
+}
+
+// Media query for 1080px screens
+@media (max-width: 1080px) {
+  .Frame57 {
+    .Vector { }
+  }
+}

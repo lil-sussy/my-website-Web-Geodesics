@@ -1,0 +1,414 @@
+$cta-padding: 64px;
+$cta-padding-large: 112px;
+$cta-padding-medium: 50px;
+$cta-border: 1px solid;
+$cta-font-color: white;
+$cta-primary-bg: rgba(255, 255, 255, 0.1);
+$cta-secondary-border: rgba(255, 255, 255, 0.5);
+$cta-font-primary: "Poppins", sans-serif;
+$cta-font-secondary: "Acme", sans-serif;
+$cta-font-button: "Roboto", sans-serif;
+$cta-font-footer: "Segoe UI", sans-serif;
+
+@mixin flex-center($direction: row, $justify: flex-start, $align: flex-start, $gap: 0) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+@mixin text-style($color: $cta-font-color, $font-size: 16px, $font-family: $cta-font-button, $font-weight: 400, $line-height: 24px) {
+	color: $color;
+	font-size: $font-size;
+	font-family: $font-family;
+	font-weight: $font-weight;
+	line-height: $line-height;
+	word-wrap: break-word;
+}
+
+.ctaContainer {
+	width: 100%;
+	padding: $cta-padding-large;
+	box-sizing: border-box;
+	padding: 10%;
+	@include flex-center(column, flex-start, flex-start, 80px);
+
+	.ctaSection {
+		align-self: stretch;
+		padding: $cta-padding-medium;
+		border: $cta-border #fbff30;
+		@include flex-center(row, flex-start, center, 80px);
+
+		.ctaContent {
+			flex: 1 1 0;
+			@include flex-center(column, flex-start, flex-start, 24px);
+
+			.ctaRow {
+				@include flex-center(column, flex-start, flex-start, 24px);
+
+				.ctaHeading {
+					align-self: stretch;
+					@include text-style($cta-font-color, 30px, $cta-font-primary, 800, 38px);
+				}
+
+				.ctaText {
+					align-self: stretch;
+					@include text-style($cta-font-color, 18px, $cta-font-secondary, 400, 27px);
+				}
+			}
+		}
+
+		.ctaActions {
+			@include flex-center(row, flex-start, flex-start, 16px);
+
+			.primaryButtonContainer,
+			.secondaryButtonContainer {
+				padding: 12px 24px;
+				@include flex-center(row, center, center, 8px);
+
+				.primaryButton {
+					@include text-style();
+				}
+
+				.secondaryButton {
+					@include text-style();
+				}
+			}
+
+			.primaryButtonContainer {
+				background: $cta-primary-bg;
+			}
+
+			.secondaryButtonContainer {
+				border: $cta-border $cta-secondary-border;
+			}
+		}
+
+		.frameContainer {
+			flex: 1 1 0;
+			@include flex-center(column, center, flex-start, 80px);
+
+			.ctaContent {
+				align-self: stretch;
+				height: 99px;
+				@include flex-center(column, flex-start, flex-start, 24px);
+
+				.ctaRow {
+					height: 99px;
+					@include flex-center(column, flex-start, flex-start, 24px);
+
+					.ctaHeading {
+						align-self: stretch;
+						@include text-style($cta-font-color, 30px, $cta-font-primary, 800, 38px);
+					}
+
+					.ctaText {
+						align-self: stretch;
+						@include text-style($cta-font-color, 18px, $cta-font-secondary, 400, 27px);
+					}
+				}
+			}
+
+			.frameContainer {
+				align-self: stretch;
+				height: 108px;
+				@include flex-center(column, center, flex-start, 12px);
+
+				.ctaActions {
+					@include flex-center(row, flex-start, center, 16px);
+          & > span {
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(300px) !important;
+            span span svg {
+            }
+            input {
+              &::placeholder {
+              }
+              font-size: 16px;
+              font-family: "Outfit", sans-serif;
+            }
+          }
+				}
+
+				.ctaFooterText {
+					align-self: stretch;
+					height: 48px;
+					@include text-style($cta-font-color, 13px, $cta-font-footer, 400, 19.5px);
+				}
+			}
+		}
+
+		.ctaImage {
+			width: 176px;
+			height: 358px;
+		}
+	}
+}
+
+@media (max-width: 1218px) {
+	.ctaContainer {
+		.ctaSection {
+			.ctaContent {
+				.ctaRow {
+					.ctaHeading {
+					}
+					.ctaText {
+					}
+				}
+			}
+
+			.ctaActions {
+				@include flex-center(column, flex-start, flex-start, 16px);
+				.primaryButtonContainer {
+					width: 100%;
+					.primaryButton {
+					}
+				}
+
+				.secondaryButtonContainer {
+					.secondaryButton {
+					}
+				}
+			}
+
+			.frameContainer {
+				.ctaContent {
+					.ctaRow {
+						.ctaHeading {
+						}
+						.ctaText {
+						}
+					}
+				}
+
+				.frameContainer {
+					.ctaActions {
+						.secondaryButtonContainer {
+							.secondaryButton {
+							}
+						}
+
+						.primaryButtonContainer {
+							.primaryButton {
+							}
+						}
+					}
+
+					.ctaFooterText {
+					}
+				}
+			}
+
+			.ctaImage {
+			}
+		}
+	}
+}
+@media (max-width: 900px) {
+	.ctaContainer {
+		.ctaSection {
+			.ctaContent {
+				.ctaRow {
+					.ctaHeading {
+						font-size: 24px;
+						line-height: 30px;
+					}
+					.ctaText {
+						font-size: 16px;
+						line-height: 24px;
+					}
+				}
+			}
+
+			.ctaActions {
+				@include flex-center(column, flex-start, flex-start, 16px);
+				.primaryButtonContainer {
+					width: 100%;
+					.primaryButton {
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
+
+				.secondaryButtonContainer {
+					.secondaryButton {
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
+			}
+
+			.frameContainer {
+				.ctaContent {
+					.ctaRow {
+						.ctaHeading {
+							font-size: 24px;
+							line-height: 30px;
+						}
+						.ctaText {
+							font-size: 16px;
+							line-height: 23px;
+						}
+					}
+				}
+
+				.frameContainer {
+					.ctaActions {
+						.secondaryButtonContainer {
+							.secondaryButton {
+								font-size: 14px;
+								line-height: 20px;
+							}
+						}
+
+						.primaryButtonContainer {
+							.primaryButton {
+								font-size: 14px;
+								line-height: 20px;
+							}
+						}
+					}
+
+					.ctaFooterText {
+						font-size: 11px;
+						line-height: 18px;
+					}
+				}
+			}
+
+			.ctaImage {
+			}
+		}
+	}
+}
+@media (max-width: 748px) {
+	.ctaContainer {
+		.ctaSection {
+			flex-direction: column;
+			align-items: start;
+			gap: 40px;
+			.ctaContent {
+				.ctaRow {
+					.ctaHeading {
+					}
+					.ctaText {
+					}
+				}
+			}
+
+			.ctaActions {
+				.primaryButtonContainer {
+					.primaryButton {
+					}
+				}
+
+				.secondaryButtonContainer {
+					.secondaryButton {
+					}
+				}
+			}
+
+			.frameContainer {
+				.ctaContent {
+					.ctaRow {
+						.ctaHeading {
+						}
+						.ctaText {
+						}
+					}
+				}
+
+				.frameContainer {
+					.ctaActions {
+						.secondaryButtonContainer {
+							.secondaryButton {
+							}
+						}
+
+						.primaryButtonContainer {
+							.primaryButton {
+							}
+						}
+					}
+
+					.ctaFooterText {
+					}
+				}
+			}
+
+			.ctaImage {
+			}
+		}
+	}
+}
+@media (max-width: 404px) {
+	.ctaContainer {
+		.ctaSection {
+			.ctaContent {
+				.ctaRow {
+					.ctaHeading {
+						font-size: 20px;
+						line-height: 24px;
+					}
+					.ctaText {
+						font-size: 14px;
+						line-height: 18px;
+					}
+				}
+			}
+
+			.ctaActions {
+				.primaryButtonContainer {
+					.primaryButton {
+						font-size: 13px;
+						line-height: 16px;
+					}
+				}
+
+				.secondaryButtonContainer {
+					.secondaryButton {
+						font-size: 13px;
+						line-height: 16px;
+					}
+				}
+			}
+
+			.frameContainer {
+				.ctaContent {
+					.ctaRow {
+						.ctaHeading {
+							font-size: 20px;
+							line-height: 24px;
+						}
+						.ctaText {
+							font-size: 14px;
+							line-height: 18px;
+						}
+					}
+				}
+
+				.frameContainer {
+					.ctaActions {
+						.secondaryButtonContainer {
+							.secondaryButton {
+							}
+						}
+
+						.primaryButtonContainer {
+							.primaryButton {
+							}
+						}
+					}
+
+					.ctaFooterText {
+					}
+				}
+			}
+
+			.ctaImage {
+			}
+		}
+	}
+}

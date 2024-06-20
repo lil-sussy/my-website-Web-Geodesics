@@ -1,0 +1,308 @@
+// Font variables
+$font-heading: "Poppins", sans-serif;
+$font-text: "Hedvig Letters Sans", sans-serif;
+$color-white: white;
+$button-background: rgba(255, 255, 255, 0.2);
+$button-border: 1px solid rgba(255, 255, 255, 0.2);
+$gap-small: 14px;
+$gap-medium: 24px;
+$gap-large: 40px;
+
+// Base flex container styles
+$flex-column: (
+	display: flex,
+	flex-direction: column,
+);
+
+$flex-center: (
+	display: flex,
+	justify-content: center,
+	align-items: center,
+);
+
+// Base text styles
+$heading-style: (
+	color: $color-white,
+	font-family: $font-heading,
+	font-weight: 700,
+);
+
+$text-style: (
+	color: $color-white,
+	font-family: $font-text,
+	font-weight: 400,
+);
+
+// Button styles
+$button-style: (
+	padding: 12px 24px,
+	display: flex,
+	justify-content: center,
+	align-items: center,
+	background: $button-background,
+	backdrop-filter: blur(200px),
+);
+
+.secondHeader {
+	width: 100%;
+  position: relative;
+	padding: 10% 10%;
+
+	@each $property, $value in $flex-column {
+    #{$property}: #{$value};
+	}
+  
+	.headerContainer {
+    align-self: stretch;
+		@each $property, $value in $flex-center {
+      #{$property}: #{$value};
+		}
+    gap: 5%;
+    justify-content: space-between;
+
+		.headerContent {
+			flex: 1 1 0;
+			max-width: 57.5%;
+			@each $property, $value in $flex-column {
+				#{$property}: #{$value};
+			}
+			gap: $gap-medium;
+
+			.headerContentContainer {
+        width: 100%;
+				align-self: stretch;
+				@each $property, $value in $flex-column {
+					#{$property}: #{$value};
+				}
+				gap: $gap-medium;
+
+				.headerMainContent {
+					width: 100%;
+					align-self: stretch;
+					@each $property, $value in $flex-column {
+						#{$property}: #{$value};
+					}
+					gap: $gap-medium;
+
+					.headerHeading {
+						align-self: stretch;
+						@each $property, $value in $heading-style {
+							#{$property}: #{$value};
+						}
+						font-size: 38px;
+						line-height: 50.6px;
+						word-wrap: break-word;
+					}
+
+					.headerText {
+						align-self: stretch;
+						@each $property, $value in $text-style {
+							#{$property}: #{$value};
+						}
+						font-size: 18px;
+						line-height: 27px;
+						word-wrap: break-word;
+					}
+
+					.headerColumns {
+            margin-top: 10px;
+						display: flex;
+						width: 100%;
+						flex-direction: row;
+						gap: 10%;
+						gap: 10%;
+						.headerItem {
+							width: 45%;
+							h3 {
+								font-family: $font-heading;
+								font-weight: 800;
+								font-size: 20px;
+							}
+							ul {
+                padding-top: 10px;
+								display: flex;
+								flex-direction: column; // or row, depending on your layout needs
+								gap: 10px;
+                margin-left: 1rem;
+                li {
+									font-family: $font-text;
+									font-weight: 400;
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
+
+				.headerActions {
+					padding-top: 16px;
+					@each $property, $value in $flex-center {
+						#{$property}: #{$value};
+					}
+					gap: $gap-small;
+
+					.headerButton {
+						@each $property, $value in $button-style {
+							#{$property}: #{$value};
+						}
+
+						&.secondary {
+							border: $button-border;
+						}
+					}
+				}
+			}
+		}
+
+		.headerImage {
+			width: 37.5%;
+      max-width: 400px;
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+  .secondHeader {
+		.headerContainer {
+      gap: $gap-large;
+			.headerContent {
+				.headerContentContainer {
+					.headerMainContent {
+						.headerHeading {
+						}
+						.headerText {
+						}
+						.headerColumns {
+              flex-direction: column;
+              gap: 20px;
+							.headerItem {
+                width: 100%;
+								h3 {
+								}
+								ul {
+									li {
+									}
+								}
+							}
+						}
+					}
+					.headerActions {
+						.headerButton {
+						}
+					}
+				}
+			}
+			.headerImage {
+			}
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.secondHeader {
+		width: 100%;
+		padding: 12px 23px 112px;
+		gap: $gap-large;
+
+		.headerContainer {
+      width: 100%;
+			flex-direction: column-reverse;
+			gap: $gap-large;
+
+			.frame70 {
+				padding: 0 56px;
+				@each $property, $value in $flex-center {
+					#{$property}: #{$value};
+				}
+				gap: 10px;
+			}
+
+			.headerImage {
+        width: unset;
+        height: 300px;
+			}
+
+			.headerContent {
+				gap: 7px;
+        max-width: 100%;
+
+				.headerContentContainer {
+					gap: $gap-small;
+
+					.headerMainContent {
+						gap: $gap-small;
+
+						.headerHeading {
+							font-size: 24px;
+							line-height: 28.8px;
+						}
+
+						.headerText {
+							font-size: 12px;
+							line-height: 18px;
+						}
+
+						.headerColumns {
+              margin-top: 40px;
+              padding: 0 10% 0 5%;
+              width: 80%;
+							.headerItem {
+								h3 {
+									// Add styles for h3 if necessary
+								}
+								ul {
+									li {
+										// Add styles for li if necessary
+									}
+								}
+							}
+						}
+					}
+
+					.headerActions {
+						.headerButton {
+							font-size: 12px;
+							line-height: 18px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Media query for 1080px screens
+@media (max-width: 450px) {
+	.secondHeader {
+		.headerContainer {
+			.headerContent {
+				.headerContentContainer {
+					.headerMainContent {
+						.headerHeading {
+						}
+						.headerText {
+						}
+						.headerColumns {
+              margin-top: 40px;
+              width: 100%;
+							.headerItem {
+								h3 {
+								}
+								ul {
+									li {
+									}
+								}
+							}
+						}
+					}
+					.headerActions {
+						.headerButton {
+						}
+					}
+				}
+			}
+			.headerImage {
+			}
+		}
+	}
+}
